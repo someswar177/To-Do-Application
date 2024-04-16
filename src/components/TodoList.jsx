@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import TodoItem from './TodoItem';
+import '../css/TodoList.css'
 
 const TodoList = () => {
     const filteredTodos = useSelector((state) => {
@@ -18,16 +19,12 @@ const TodoList = () => {
 
     // console.log("Filtered Todos :",filteredTodos)
   return (
-    <ul>
-        <h4>All Your Notes Here</h4>
-        {
-            filteredTodos.map((todo, index) => {
-                return <TodoItem key={index} todo={todo} index={index}/>;
-                // return <li key={index}>{todo.text}</li>;
-            })
-            
-        }      
-    </ul>
+    <div className="todo-list-container">
+            <h4 className="todo-list-title">All Your Notes Here</h4>
+            {filteredTodos.map((todo, index) => (
+                <TodoItem key={index} todo={todo} index={index} />
+            ))}
+    </div>
   )
 }
 

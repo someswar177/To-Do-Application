@@ -1,24 +1,41 @@
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterTodos, markAllCompleted } from "../redux/actions";
-
+import '../css/FilterButton.css'
 
 const FilterButton = () => {
-    const dispatch = useDispatch()
-    const currentFilter = useSelector((state)=> state.filter);
-    const handleFilter = (filter)=>{
-        dispatch(filterTodos(filter))
-    }
-    return(
-        <div className="fs-5">
-            <select className="rounded-2 py-2 px-3" name="" id="" value={currentFilter} onChange={(e)=>{handleFilter(e.target.value)}}>
-                <option value="ALL">All</option>
-                <option value="COMPLETED">Completed</option>
-                <option value="INCOMPLETE">Incomplete</option>
-            </select>
+  const dispatch = useDispatch();
+  const currentFilter = useSelector((state) => state.filter);
 
-            <button onClick={()=>dispatch(markAllCompleted())} className="btn btn-success mx-4 fs-5">Mark All completed</button>
-        </div>
-    )
-}
+  const handleFilter = (filter) => {
+    dispatch(filterTodos(filter));
+  };
+
+  const handleMarkAllCompleted = () => {
+    dispatch(markAllCompleted());
+  };
+
+  return (
+    <div className="filter-button-container">
+      <select
+        className="filter-select"
+        value={currentFilter}
+        onChange={(e) => {
+          handleFilter(e.target.value);
+        }}
+      >
+        <option value="ALL">All</option>
+        <option value="COMPLETED">Completed</option>
+        <option value="INCOMPLETE">Incomplete</option>
+      </select>
+      <button
+        onClick={handleMarkAllCompleted}
+        className="mark-all-completed-button"
+      >
+        Mark All Completed
+      </button>
+    </div>
+  );
+};
 
 export default FilterButton;

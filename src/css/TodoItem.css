@@ -1,0 +1,61 @@
+.todo-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+  }
+  
+  .todo-item-content {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+  }
+  
+  .todo-item-index {
+    font-size: 1rem;
+  }
+  
+  .todo-item-text {
+    font-size: 1rem;
+    margin-left: 8px;
+  }
+  
+  .todo-item-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+  
+  .todo-item-button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size:13px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .todo-item-button--completed {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .todo-item-button--incomplete {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  .todo-item-delete-icon {
+    margin: 0px 10px;
+    font-size: 1.5rem;
+    color: #dc3545;
+    cursor: pointer;
+  }
+  

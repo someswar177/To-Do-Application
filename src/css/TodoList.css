@@ -1,0 +1,12 @@
+.todo-list-container {
+    margin-top: 2px;
+  }
+  
+  .todo-list-title {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+  
+  /* Add styling for TodoItem component as needed */
+  

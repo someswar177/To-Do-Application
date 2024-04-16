@@ -1,17 +1,35 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { markCompleted, markIncomplete, removeTodo } from '../redux/actions';
+import { MdDelete } from "react-icons/md";
+import '../css/TodoItem.css';
 
-const TodoItem = ({todo,index}) => {
+const TodoItem = ({ todo, index }) => {
+  const dispatch = useDispatch();
+  const todoCompleted = (id) => {
+    dispatch(markCompleted(id))
+  }
+  const todoIncomplete = (id) => {
+    dispatch(markIncomplete(id))
+  }
+  const deleteTodo = (id)=>{
+    dispatch(removeTodo(id))
+  }
   return (
-    <div className='d-flex flex-col shadow-sm rounded-2 py-3 px-4'>
-        <div className=''>
-            <span className='fs-4'>{index+1} - </span>
-            <span className='fs-4'>{todo.text}</span>
-        </div> 
-        <div className='px-5'>
-        {
-        todo.completed ? <button className='btn btn-success fs-5'>Completed</button> : <button className='btn btn-warning fs-5'>Incomplete</button>}
-        </div>     
+    <div className='todo-item-container'>
+    <div className='todo-item-content'>
+      <span className='todo-item-index'>{index + 1} - </span>
+      <span className='todo-item-text'>{todo.text}</span>
     </div>
+    <div className='todo-item-buttons'>
+      {todo.completed ? (
+        <button onClick={() => { todoIncomplete(index) }} className='todo-item-button todo-item-button--completed'>Completed</button>
+      ) : (
+        <button onClick={() => { todoCompleted(index) }} className='todo-item-button todo-item-button--incomplete'>Incomplete</button>
+      )}
+      <MdDelete onClick={() => { deleteTodo(index) }} className='todo-item-delete-icon' />
+    </div>
+  </div>
   )
 }
 
