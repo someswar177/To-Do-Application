@@ -9,14 +9,14 @@ const FilterButton = () => {
         dispatch(filterTodos(filter))
     }
     return(
-        <div className="flex items-center">
-            <select name="" id="" value={currentFilter} onChange={(e)=>{handleFilter(e.target.value)}}>
-                <option value="ALL">Default</option>
+        <div className="fs-5">
+            <select className="rounded-2 py-2 px-3" name="" id="" value={currentFilter} onChange={(e)=>{handleFilter(e.target.value)}}>
+                <option value="ALL">All</option>
                 <option value="COMPLETED">Completed</option>
                 <option value="INCOMPLETE">Incomplete</option>
             </select>
 
-            <button onClick={()=>dispatch(markAllCompleted())} className="btn btn-succes">Mark All completed</button>
+            <button onClick={()=>dispatch(markAllCompleted())} className="btn btn-success mx-4 fs-5">Mark All completed</button>
         </div>
     )
 }
