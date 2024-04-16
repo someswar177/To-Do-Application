@@ -17,7 +17,7 @@ const TodoItem = ({ todo, index }) => {
   }
   return (
     <div className='todo-item-container'>
-    <div className='todo-item-content'>
+      <div className={`todo-item-content ${todo.completed ? 'completed' : ''}`}>
       <span className='todo-item-index'>{index + 1} - </span>
       <span className='todo-item-text'>{todo.text}</span>
     </div>

@@ -1,7 +1,6 @@
 import { createStore } from 'redux';
 import todoReducer from './reducer';
 
-// Function to load state from local storage
 const loadState = () => {
   try {
     const serializedState = localStorage.getItem('reduxState');
@@ -15,7 +14,6 @@ const loadState = () => {
   }
 };
 
-// Function to save state to local storage
 const saveState = (state) => {
   try {
     const serializedState = JSON.stringify(state);
@@ -25,13 +23,10 @@ const saveState = (state) => {
   }
 };
 
-// Load persisted state from local storage
 const persistedState = loadState();
 
-// Create Redux store with persisted state
 const store = createStore(todoReducer, persistedState);
 
-// Subscribe to store updates and save state to local storage
 store.subscribe(() => {
   saveState(store.getState());
 });

@@ -1,5 +1,4 @@
 .todo-container {
-  /* border: 1px solid #ccc; */
   border-radius: 8px;
   padding: 20px;
   width: 60%;
@@ -57,8 +56,7 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    /* display: none; */
-  }
+}
   
   .search-input__button-text {
     font-size: 18px;
@@ -77,8 +75,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end; /* Align items to the bottom */
-    margin-top: auto; /* Push to the bottom */
+    align-items: flex-end; 
+    margin-top: auto; 
 }
   
   .add-todo__input {
@@ -138,6 +136,7 @@
   .todo-container {
       width: 95%; 
       height: 95vh;
+      font-size: medium;
   }
   .todo-controls {
       flex-direction: column-reverse;
