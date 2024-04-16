@@ -123,11 +123,14 @@
 
   @media screen and (max-width: 800px) {
     .todo-container {
-        width: 95%; /* Adjust width for smaller screens */
+        width: 95%; 
     }
     .filter-button,
     .search-input {
-        width: 100%; /* Take full width on smaller screens */
+        width: 100%; 
+    }
+    .add-todo{
+      margin-bottom: 25px;
     }
 }
 
@@ -161,7 +164,7 @@
   }
 
   .add-todo{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .add-todo__button {
