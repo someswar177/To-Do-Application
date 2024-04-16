@@ -1,7 +1,7 @@
 .filter-button-container {
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 2px;
   }
   
   .filter-select {

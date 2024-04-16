@@ -3,7 +3,10 @@ import { useDispatch } from "react-redux";
 import { addTodo, updateSearchTerm } from "../redux/actions";
 import FilterButton from "./FilterButton";
 import TodoList from "./TodoList";
-import '../css/Todo.css'
+import '../css/Todo.css';
+import { FaSearch } from "react-icons/fa";
+import { IoMdAdd } from "react-icons/io";
+
 const Todo = () => {
     const dispatch = useDispatch()
     const [newTodoText, setNewTodoText] = useState("");
@@ -55,6 +58,7 @@ const Todo = () => {
                     >
                         <div className="search-input__button-text">Search</div>
                     </button>
+                    <FaSearch className="search-input__icon" onClick={handleAddToDoClick}/>
                 </div>
             </div>
 
@@ -76,6 +80,7 @@ const Todo = () => {
                 >
                     <div className="add-todo__button-text">Add</div>
                 </button>
+                <IoMdAdd className="add-todo__icon" onClick={handleAddToDoClick}/>
             </div>
         </div>
     )
